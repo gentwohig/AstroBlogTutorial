@@ -1,4 +1,7 @@
 ---
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
 const pageTitle = "About Me";
 const identity = {
     firstName: "Sarah",
@@ -14,7 +17,29 @@ const finished = false;
 const goal = 3;
 ---
 
----
+<style>
+    h2 {
+        color: #555;
+    }
+    a {
+        text-decoration: none;
+        color: #007bff;
+    }
+    a:hover {
+        text-decoration: underline;
+    }
+    ul {
+        list-style-type: none;
+        padding: 0;
+    }
+    li {
+        background: #fff;
+        margin: 5px 0;
+        padding: 10px;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+</style>
 
 <html lang="en">
     <head>
@@ -25,9 +50,7 @@ const goal = 3;
         <title>{pageTitle}</title>
     </head>
     <body>
-        <a href="/">Home</a>
-        <a href="/about/">About</a>
-        <a href="/blog/">Blog</a>
+        <Header />
         <h1>{pageTitle}</h1>
         <h2>... and my new Astro site!</h2>
 
@@ -72,5 +95,6 @@ const goal = 3;
                 <p>My goal is not 3 days.</p>
             )
         }
+        <Footer />
     </body>
 </html>
